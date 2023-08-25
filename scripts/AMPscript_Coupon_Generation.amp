@@ -1,0 +1,11 @@
+%%[
+VAR @customerFirstName, @customerEmail, @purchaseHistory, @uniqueNumber, @couponCode, @expirationDate
+SET @customerFirstName = AttributeValue("FirstName")
+SET @customerEmail = AttributeValue("Email")
+SET @purchaseHistory = AttributeValue("LastPurchasedItem")
+
+SET @uniqueNumber = Now() /* Current timestamp for uniqueness */
+SET @couponCode = CONCAT(Substring(@customerFirstName,1,3), Format(@uniqueNumber,"hhmmss"))
+
+SET @expirationDate = DateAdd(Now(), 30, "D")
+]%%

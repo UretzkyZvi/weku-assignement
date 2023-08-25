@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Personalized Coupon</title>
+</head>
+<body>
+    <p>Hello %%=v(@customerFirstName)=%%,</p>
+    <p>Based on your recent purchase of %%=v(@purchaseHistory)=%%, we have a special offer just for you!</p>
+    <p>Your unique coupon code is: <strong>%%=v(@couponCode)=%%</strong></p>
+    <p>This coupon expires on: <strong>%%=Format(@expirationDate,"MMMM dd, yyyy")=%%</strong></p>
+    <p>Happy shopping!</p>
+</body>
+</html>
